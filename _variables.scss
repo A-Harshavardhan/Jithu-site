@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+
+// Define breakpoints as SCSS variables
+$breakpoints: (
+  sm: 568px,
+  md: 768px,
+  lg: 992px
+);
+
+// Mixin for media queries
+@mixin media-up($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} not found in \$breakpoints map.";
+  }
+}
+
+// Roboto font family
+$roboto : "Roboto";
+
+// Suse font family
+$suse : "SUSE";
